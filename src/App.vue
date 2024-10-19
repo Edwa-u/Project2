@@ -1,3 +1,12 @@
+
+<template>
+  <div>
+    <h1>Meme Poster</h1>
+    <MemeForm @add-meme="addMeme" />
+    <MemeGallery :memes="memes" />
+  </div>
+</template>
+
 <script setup lang="ts">
 import { ref } from 'vue'
 import { Meme } from './types'
@@ -10,11 +19,3 @@ function addMeme(newMeme: Meme) {
   memes.value.push(newMeme)
 }
 </script>
-
-<template>
-  <div>
-    <h1>Meme Poster</h1>
-    <MemeForm @add-meme="addMeme" />
-    <MemeGallery :memes="memes" />
-  </div>
-</template>
